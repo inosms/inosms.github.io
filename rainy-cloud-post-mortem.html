@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="main.css" rel="stylesheet">
+
+  <title>inosms</title>
+</head>
+
+<body>
+  <main role="main" class="container blog">
+    <h4 class="mt-5"><a href="index.html">back</a></h4>
+    <h1 class="mt-4"><a href="https://store.steampowered.com/app/1343230/RainyCloud">rainy cloud</a> - post
+      mortem</h1>
+      <div class="mb-4 text-muted">2022/10/29</div>
+    <p class="lead">Thoughts about an adventure to write a game in Rust.</p>
+
+    <p>
+      After being in development on and off since 2019 <a
+        href="https://store.steampowered.com/app/1343230/RainyCloud">rainy cloud</a> - a game written in Rust for
+      practice
+      by a friend of mine and me - is finally done.
+      As so often, what was originally thought of as a "short project to gather some experience" turned out to be a
+      several year long marathon...
+    </p>
+    <p>
+      This post mainly serves as a reminder to myself and to organize what I have learned from this project.
+
+    </p>
+    <p>
+      But first here is a trailer of the game:
+    <div class="row mt-1 justify-content-center">
+      <video autoplay controls loop muted width="100%">
+        <source src="trailer.webm">
+      </video>
+    </div>
+    </p>
+
+
+    <h2 class="mt-4">Game design</h2>
+    Before diving into the technical stuff it is worth mentioning what went wrong about the game design.
+    Doing game design without any real plan or experience turns to be (surprise!) really really difficult.
+    Although the original goal of this project was to gain some experience in Rust development, we might have actually
+    learnt more about game development (or about how difficult game design is) than about Rust.
+
+    <h5 class="mt-4">more prototyping, less polishing</h5>
+    One of the first lessons we learned through this project was (the rather obvious)
+    <p class="font-italic">Do a lot of prototyping and do not polish at the beginning.</p>
+
+    We decided on a game concept early on in the development of the game and started implementing right away. We then
+    realized that we would need to change many things for it to actually be a <i>game</i> but had then already invested
+    too much time in completely unrelated parts of the game such as the panel design.
+    Had we decided to create more throw away prototypes in the beginning, we would have probably been able to iterate
+    more times and create an overall better game.
+
+    <h5 class="mt-4">feature creep and scope limiting</h5>
+    <p>
+      One of the next big problems was feature creep. The longer the development took the more ideas about extra
+      features popped up and we started implementing features which weren't in the original design. This was fun, but it
+      also greatly derailed the whole process. Thus a year into the project the "game" had become this monstrous
+      <i>something</i>.
+      We then decided to cut a great deal of the features and changed the design to something that can realistically be
+      implemented while also doing a full time job. (Which is why we discontinued <a href="conquest.html">conquest</a>
+      and made it to rainy cloud.)
+    </p>
+    <p>
+      Looking back, a decision that we should have done at the beginning of this project was to limit the scope of this
+      game. This would have meant to create a minimal game design plan and stick to it without adding too many new
+      features. Once the minimum game would be done we still could have added all those nice-to-have features. But the
+      first priority should have been to actually build something that resembles an actual <i>game</i>.
+    </p>
+
+    <h2 class="mt-4">Game development process</h2>
+
+    As already mentioned, although the main goal for this project was to practice Rust we found that there weren't as
+    many obstacles as we anticipated here.
+
+    <h5 class="mt-4">Rust!</h5>
+    As the main purpose was not to build a game, but to learn Rust one can say that we didn't choose Rust as an
+    development language for a game, but rather a game as an exercise for learning Rust. If our primary goal would have
+    been to finish a game most likely choosing Unity with C# or the likes would have been easier overall.
+    Nevertheless here is our experience with using Rust for game development.
+
+
+    <h6 class="mt-4">libraries</h6>
+    When we started the game there were some game engines in early development. We chose <a
+      href="https://amethyst.rs/">amethyst</a> which was quite easy to pick up and use. Thanks to cargo there was no
+    difficult setup needed and we were basically able to start writing from day one.
+
+    This was especially moving to me as I expected a weeks-long setup process - something I was used from previous C++
+    projects...
+
+    Sadly amethyst was deprecated some time into our development. At that point it wasn't really feasible to switch over
+    to a different game engine. However we found that even the version of amethyst that we used was stable enough for
+    our purposes.
+
+    <h6 class="mt-4">cross compiling</h6>
+    This part surprised me the most coming from C++. Basically cross compiling just worked. We had some problems with
+    external dlls missing, but nothing compared to the cross-compile hell in C++. Now that I have gotten used to Rust I
+    sometimes wonder why C++ was just so <i>cumbersome</i> to use.
+
+    <h6 class="mt-4">rust overall</h6>
+    <p>
+      Overall speaking it was very satisfying to write game logic in Rust. The first few weeks did result in some borrow
+      checker fighting, but it never really hindered progress that much and once you get used to it, it feels weird to
+      write code without it. Rust's type system also helped us to catch a lot of bugs during compile time and it most
+      likely enabled us to actually finish the game after such a long time. When going back to a code base you haven't
+      touched in some months and try to refactor some part of it, having a strict compiler checking what you are doing
+      is really worth gold. Extending some enum and being reminded of all the other places where a new match case needs
+      to be added was really helpful.
+    </p>
+    <p>All in all I would choose Rust again as a development language for a game. The only real downside we experienced
+      during the development process were slow compile-test cycles and the lack of libraries - both of are being <a
+        href="https://bevyengine.org/">actively</a> worked on.</p>
+
+    <h2 class="mt-4">Actually finishing a project and battling perfectionism</h2>
+    <p>
+      There were some more things I personally certainly didn't anticipate when starting this project. Namely how hard it would be
+      to
+      actually finish something and that a software project is not only working on some peace of code but also with
+      oneself.
+    </p>
+
+    <p>
+      Having started - and not finished - many projects I once again realized how difficult it is to really
+      <i>finish</i>
+      a project. What seemed to be a super small project somehow grew until you suddenly discover your interest
+      for p2p systems or maybe learning a new language language or philosophy of mathematics. In short: <i>Suddenly
+        everything is
+        interesting except this project</i>. Pushing through this last phase was by far the most exhausting. There were
+      suddenly so many excuses. "I have to concentrate on work." "I need to do exercise." "I need to clean the backside
+      of
+      the cabinet."
+    </p>
+
+    <p>
+      Most likely one of the biggest obstacle for the project was my perfectionism. When we started the project I had
+      this very shiny perfect vision of the game. However the further we got the more I realized that it will not become
+      a perfect game. This realization and the fear of actually releasing something imperfect would cause me to avoid
+      the project or polish something a completely insignificant part of the game. In the end I had to face the truth
+      that it would not be perfect and that people might hate it when actually released.
+    </p>
+
+
+    <h2 class="mt-4">Conclusion?</h2>
+    <p>
+      Honestly releasing a side project after three years in development feels <i>weird</i>. According to plan it should
+      have been finished in about one tenth of the time with double the functionality. But I guess that is what they
+      tried
+      to teach us in university that you will always underestimate stuff. But experiencing your own inability to
+      estimate
+      the scope of projects first-hand was a very humbling experience.
+      Despite all of that pushing through until the end feels really rewarding - although releasing something so utterly different to the original vision is scary and maybe a bit disappointing. 
+    </p>
+    <p>
+      If I decided to start another game project I would probably do more prototyping, use a more mature game engine
+      library and fix the scope before actually starting the development process. Also if building a game would be the main goal maybe choosing Unity or any other mature library or framework would probably be best.
+    </p>
+    <p>
+      As for the language using Rust for this project was super pleasant so I would consider choosing it again. What
+      surprised my was that despite my experience with other languages where you quickly grow to despise everything from
+      tooling to the language design I actually grew to like Rust even more. If I had to summarize it I would say it
+      just works. A big thank you to all the developer involved for all the great effort you have put into result!
+    </p>
+  </main>
+  <footer class="footer">
+    <div class="container blog">
+      <span class="text-muted"><a href="https://github.com/inosms">@inosms</a></span>
+    </div>
+  </footer>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

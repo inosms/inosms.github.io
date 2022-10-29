@@ -7,184 +7,211 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <style>
-    h1 {
-      color: #eee
-    }
-  </style>
-  <link href="cover.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="main.css" rel="stylesheet">
 
-  <title>inosms - projects</title>
+  <title>inosms</title>
 </head>
 
 <body>
-  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-    <header class="masthead mb-auto">
-      <div class="inner">
-        <h1 class="masthead-brand"><a href="https://github.com/inosms">@inosms</a> - projects</h3>
 
+  <!-- Begin page content -->
+  <main role="main" class="container">
+    <h1 class="mt-5"><a href="https://github.com/inosms">@inosms</a></h3>
+      <h2 class="mt-5">posts</h2>
+      <p class="h5"><a href="rainy-cloud-post-mortem.html">2022/10/29 rainy cloud - post mortem</a></p>
+      <h2 class="mt-5">side projects</h2>
+
+      <div class="row mb-2">
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-info">game</strong>
+              <h3 class="mb-0">
+                <a class="text-dark" href="#">rainy cloud</a>
+              </h3>
+              <div class="mb-1 text-muted">2022</div>
+              <p class="card-text mb-auto">experimental game written in rust. With <a
+                  href="https://github.com/takedakun">@takedakun.</a></p>
+              <div class="mb-1 text-muted">Rust, GLSL</div>
+              <a href="https://store.steampowered.com/app/1343230/RainyCloud">Visit on Steam</a>
+            </div>
+            <video class="card-img-right flex-auto d-none d-md-block" loop autoplay muted>
+              <source src="rainycloud.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-info">game</strong>
+              <h3 class="mb-0">
+                <a class="text-dark" href="#">conquest</a>
+              </h3>
+              <div class="mb-1 text-muted">2019</div>
+              <p class="card-text mb-auto">turn based strategy game in rust with <a
+                  href="https://github.com/takedakun">@takedakun.</a><br>(Discontinued)
+              </p>
+              <div class="mb-1 text-muted">Rust, GLSL</div>
+              <a href="conquest.html">Continue reading</a>
+            </div>
+            <video class="card-img-right flex-auto d-none d-md-block" loop autoplay muted>
+              <source src="back.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
       </div>
-    </header>
-
-    <div class="album py-5">
-      <div class="container">
-
-        <div class="row">
-          <div class="col-md-4" onclick="location.href='./conquest.html';" style="cursor: pointer;">
-            <div class="card mb-4 shadow">
-              <video width="100%" height="220em" loop autoplay>
-                <source src="back.mp4" type="video/mp4">
-              </video>
-              <div class="card-body">
-                <h3 class="text-center">conquest</h3>
-                <p class="card-text text-center">turn based strategy game in rust with <a
-                    href="https://github.com/takedakun">@takedakun. <br />Ongoing</a></p>
-
-              </div>
+      <div class="row mb-2">
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-info">game</strong>
+              <h3 class="mb-0">
+                <a class="text-dark" href="#">sol</a>
+              </h3>
+              <div class="mb-1 text-muted">2020</div>
+              <p class="card-text mb-auto">real-time raytracing in Rust/GLSL</p>
+              <div class="mb-1 text-muted">Rust, GLSL</div>
             </div>
+            <video class="card-img-right flex-auto d-none d-md-block" loop autoplay muted>
+              <source src="raytracing.mp4" type="video/mp4">
+            </video>
           </div>
-
-          <div class="col-md-4">
-            <div class="card mb-4 shadow">
-              <video width="100%" height="220em" loop autoplay>
-                <source src="raytracing.mp4" type="video/mp4">
-              </video>
-              <div class="card-body">
-                <h3 class="text-center">sol</h3>
-                <p class="card-text text-center">real-time raytracing game in Rust/GLSL more details soon</p>
-  
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4" onclick="location.href='./darkocean.html';" style="cursor: pointer;">
-            <div class="card mb-4 shadow">
-              <video height="220em" width="100%" loop autoplay>
-                <source src="a.mp4" type="video/mp4">
-              </video>
-              <div class="card-body">
-                <h3 class="text-center">dark ocean</h3>
-                <p class="card-text text-center">flow like game in C++/GLSL. First game project </p>
-
-              </div>
-            </div>
-          </div>
-
-         
-          
-
-
         </div>
-
-        <div class="row">
-          <div class="col-md-4" onclick="location.href='https://www.youtube.com/watch?v=g0IFM92a26w&feature=emb_title';"
-            style="cursor: pointer;">
-            <div class="card mb-4 shadow">
-              <img width="100%" height="220em" src="icon.png" />
-              <div class="card-body">
-                <h3 class="text-center">siren</h3>
-                <p class="card-text text-center">traffic sign and light detection iOS App with CoreML.</p>
-
-              </div>
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-info">game</strong>
+              <h3 class="mb-0">
+                <a class="text-dark" href="#">dark ocean</a>
+              </h3>
+              <div class="mb-1 text-muted">2012</div>
+              <p class="card-text mb-auto">flow like game in C++/GLSL. First game project
+              </p>
+              <div class="mb-1 text-muted">C++, GLSL</div>
+              <a href="darkocean.html">Continue reading</a>
             </div>
+            <video class="card-img-right flex-auto d-none d-md-block" loop autoplay muted>
+              <source src="a.mp4" type="video/mp4">
+            </video>
           </div>
-
-
-
-          <div class="col-md-4" onclick="location.href='main.pdf';" style="cursor: pointer;">
-            <div class="card mb-4 shadow">
-              <img width="100%" height="220em" src="thesis.png" />
-              <div class="card-body">
-                <h3 class="text-center">thesis</h3>
-                <p class="card-text text-center">Needle detection as visualization in OCT imaging with CNN</p>
-
-              </div>
-            </div>
-
-          </div>
-
-          <div class="col-md-4" onclick="location.href='https://github.com/inosms/shrinksharpen';"
-            style="cursor: pointer;">
-            <div class="card mb-4 shadow">
-              <img width="100%" height="220em" src="sharpen.gif" />
-              <div class="card-body">
-                <h3 class="text-center">shrink sharpen</h3>
-                <p class="card-text text-center">algorithm for sharpening blurred images by shrinking blurry regions</p>
-
-              </div>
-            </div>
-          </div>
-
-
-
         </div>
-
-        <div class="row">
-          <div class="col-md-4" onclick="location.href='https://github.com/inosms/version_bridge';"
-            style="cursor: pointer;">
-            <div class="card mb-4 shadow">
-              <div class="card-body">
-                <h3 class="text-center">version bridge</h3>
-                <p class="card-text text-center">enabled calling python functions from different versions</p>
-              </div>
-            </div>
-
-          </div>
-          <div class="col-md-4" onclick="location.href='https://github.com/inosms/dory';" style="cursor: pointer;">
-            <div class="card mb-4 shadow">
-              <div class="card-body">
-                <h3 class="text-center">dory</h3>
-                <p class="card-text text-center">simple backup software using rsync under the hood</p>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="col-md-4" onclick="location.href='https://github.com/inosms/telelog';" style="cursor: pointer;">
-            <div class="card mb-4 shadow">
-              <div class="card-body">
-                <h3 class="text-center">telelog</h3>
-                <p class="card-text text-center">Pipe command outputs to your telegram. Go implementation</p>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-
-
-
-
-
-      <div class="row">
-        <div class="col-md-4" onclick="location.href='https://github.com/inosms/valid';" style="cursor: pointer;">
-          <div class="card mb-4 shadow">
-            <div class="card-body">
-              <h3 class="text-center">valid</h3>
-              <p class="card-text text-center">programming language experiment used for genetic algorithms.</p>
-            </div>
-          </div>
-
-        </div>
-
-
-
-
       </div>
-
+      <div class="row mb-2">
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-warning">app</strong>
+              <h3 class="mb-0">
+                <a class="text-dark" href="#">siren</a>
+              </h3>
+              <div class="mb-1 text-muted">2018</div>
+              <p class="card-text mb-auto">traffic sign and light detection iOS App with CoreML</p>
+              <div class="mb-1 text-muted">iOS, Swift, Machine Learning, CoreML</div>
+              <a href="https://www.youtube.com/watch?v=g0IFM92a26w&feature=emb_title">Presentation</a>
+            </div>
+            <img class="card-img-right flex-auto d-none d-md-block" src="icon.png">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-danger">uni</strong>
+              <h3 class="mb-0">
+                <a class="text-dark" href="#">thesis</a>
+              </h3>
+              <div class="mb-1 text-muted">2017</div>
+              <p class="card-text mb-auto">Needle detection as visualization in OCT imaging with CNN</p>
+              <div class="mb-1 text-muted">Machine Learning, C++</div>
+              <a href="main.pdf">PDF</a>
+            </div>
+            <img class="card-img-right flex-auto d-none d-md-block" src="thesis.png">
+          </div>
+        </div>
       </div>
-
-    </div>
-  </div>
-  <footer class="mastfoot mt-auto">
-    <div class="inner">
-      <p></p>
+      <div class="row mb-2">
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-success">util</strong>
+              <h3 class="mb-0">
+                <a class="text-dark" href="#">shrink sharpen</a>
+              </h3>
+              <div class="mb-1 text-muted">2014</div>
+              <p class="card-text mb-auto">algorithm for sharpening blurred images by shrinking blurry regions</p>
+              <div class="mb-1 text-muted">C++</div>
+              <a href="https://github.com/inosms/shrinksharpen">Github</a>
+            </div>
+            <img class="card-img-right flex-auto d-none d-md-block" src="sharpen.gif">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-success">util</strong>
+              <h3 class="mb-0">
+                <a class="text-dark" href="#">version bridge</a>
+              </h3>
+              <div class="mb-1 text-muted">2018</div>
+              <p class="card-text mb-auto">enabled calling python functions from different versions</p>
+              <div class="mb-1 text-muted">Python</div>
+              <a href="https://github.com/inosms/version_bridge">Github</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-success">util</strong>
+              <h3 class="mb-0">
+                <a class="text-dark" href="#">dory</a>
+              </h3>
+              <div class="mb-1 text-muted">2015</div>
+              <p class="card-text mb-auto">simple backup software using rsync under the hood</p>
+              <div class="mb-1 text-muted">Python</div>
+              <a href="https://github.com/inosms/dory">Github</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-success">util</strong>
+              <h3 class="mb-0">
+                <a class="text-dark" href="#">telelog</a>
+              </h3>
+              <div class="mb-1 text-muted">2016</div>
+              <p class="card-text mb-auto">pipe command outputs to your telegram</p>
+              <div class="mb-1 text-muted">Go</div>
+              <a href="https://github.com/inosms/telelog">Github</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-success">util</strong>
+              <h3 class="mb-0">
+                <a class="text-dark" href="#">valid</a>
+              </h3>
+              <div class="mb-1 text-muted">2015</div>
+              <p class="card-text mb-auto">programming language experiment used for genetic algorithms</p>
+              <a href="https://github.com/inosms/valid">Github</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <span class="text-muted"><a href="https://github.com/inosms">@inosms</a></span>
     </div>
   </footer>
-  </div>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
